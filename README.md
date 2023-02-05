@@ -21,6 +21,21 @@
 - Boot Name: user_communication_bot
 - Group ID: -895031573
 
+## Implementation
+
+- User ID must be passed in the request header
+
+•	80000000-8000-8000-8000-000000000008
+•	80000008-8008-8008-8008-800000000008
+•	90000000-9000-9000-9000-000000000009
+•	90000009-9009-9009-9009-900000000009
+
+-	To send messages to subscribers 
+
+-   To add a Webhooks to receive responses from messenger API
+-   To remove a Webhooks to receive responses from messenger API
+
+
 
 ## Limitations
 
