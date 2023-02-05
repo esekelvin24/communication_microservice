@@ -9,17 +9,21 @@
 
 ## Deploy application
 
-Kindly note that I deployed my applications using docker container. the docker-compose, Dockerfile are on the root directory of this projects
 
-You can change the database hostname to localhost in your .env file if you are not using docker
+
 
 - 	git clone ...
-- 	php artisan migrate
-- 	php artisan db:seed
-- 	php artisan serve
+- 	composer install
+- 	
 
 
 
+- Boot Name: user_communication_bot
+- Group ID: -895031573
+
+## Security
+
+- make sure you pass the user-id on the header of each request 
 
 
 
