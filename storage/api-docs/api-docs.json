@@ -1,0 +1,227 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Communication Microservice",
+        "description": "This allows you to communicate with telegram bot in a telegram channel",
+        "contact": {
+            "email": "esekelvin24@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api/v1",
+            "description": "Communication Microservice "
+        }
+    ],
+    "paths": {
+        "/send_message_to_subscribers/{chat_id}": {
+            "post": {
+                "tags": [
+                    "Send Message to Subscribers"
+                ],
+                "summary": "Send Message to Subscribers",
+                "description": "To send Message to users that is subcribed  to a telegram channel",
+                "operationId": "send_message_to_subscribers",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "User ID (E.g. 90000009-9009-9009-9009-900000000009)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "chat_id",
+                        "in": "path",
+                        "description": "Chat ID (E.g. -895031573) of the telegram channels users are subscribe to",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Message Details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "message"
+                                ],
+                                "properties": {
+                                    "message": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "There is an announcement about the new coin swapping"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Registration",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/set_recieve_reponse_webhook": {
+            "post": {
+                "tags": [
+                    "Set Webhooks"
+                ],
+                "summary": "Set callback URL Webhook",
+                "description": "Webhooks to receive responses from messenger API",
+                "operationId": "set_recieve_reponse_webhook",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "User ID (E.g. 90000009-9009-9009-9009-900000000009)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Message Details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "webhook_url"
+                                ],
+                                "properties": {
+                                    "webhook_url": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://domain.com/log_reponse_webhook"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Set Webhook Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/unset_recieve_reponse_webhook": {
+            "post": {
+                "tags": [
+                    "Unset Webhooks"
+                ],
+                "summary": "UnSet callback URL Webhook",
+                "description": "Webhooks to receive responses from messenger API",
+                "operationId": "unset_recieve_reponse_webhook",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "User ID (E.g. 90000009-9009-9009-9009-900000000009)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Message Details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "webhook_url"
+                                ],
+                                "properties": {
+                                    "webhook_url": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "https://domain.com/log_reponse_webhook"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Set Webhook Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "success"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects",
+            "description": "API Endpoints of Communication Microservice"
+        }
+    ]
+}
