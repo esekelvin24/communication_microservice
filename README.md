@@ -16,10 +16,18 @@
 - 	composer install
 - 	
 
-
+## Bot and Group created
 
 - Boot Name: user_communication_bot
 - Group ID: -895031573
+
+
+## Limitations
+
+- Add users to channel was not implemented because there is no endpoint to do that on telegram API
+- To subscribe users to chat was not implemented because telegram do not allow bot to initiate chat with users
+- Callback webhook requires an online server to test. however there is an endpoint (log_reponse_webhook) to log all callback 
+
 
 ## Security
 
